@@ -1,25 +1,25 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/13/2024 1:04:52 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-E0TE9IN"
   DTS:CreatorName="DESKTOP-E0TE9IN\PC"
-  DTS:DTSID="{76E25CCA-7C13-4F0D-8B04-DDFBA9EA17E5}"
+  DTS:DTSID="{89FB4EFB-9613-47A7-A49D-D48B7AD24616}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="12298"
   DTS:ObjectName="DimDivisa"
   DTS:PackageType="5"
   DTS:VersionBuild="18"
-  DTS:VersionGUID="{40CC1ED7-E6B3-4A98-935D-15B83EEA43D3}">
+  DTS:VersionGUID="{2C62AD4B-5EC4-49F1-84C1-000197339DC0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{C68DEC37-EC7F-4A5A-810F-CD6C9BD2E400}"
+      DTS:DTSID="{8DDAA6C6-7BC2-43C3-9B8A-60DAA60AB4AC}"
       DTS:ObjectName="Administrador de conexiones de archivos planos">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::DimDivisa]</DTS:PropertyExpression>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IDDivisa"
-              DTS:DTSID="{A69B11BE-EDD2-48BC-9638-5D30F3DCEB4E}"
+              DTS:DTSID="{12ADD8B4-511C-40C2-B7B0-D40A3712FAE0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EtiquetaDivisa"
-              DTS:DTSID="{2D4978DB-EB8C-471D-832E-FA1686912D55}"
+              DTS:DTSID="{DF375EFA-8CFA-41B5-8B91-578971970470}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NombreDivisa"
-              DTS:DTSID="{B73EB869-A2A1-430B-B381-CEE7CE591EA3}"
+              DTS:DTSID="{2ED3691A-AA0F-490C-9070-98B68EA363CC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DescripcionDivisa"
-              DTS:DTSID="{C498E223-15DF-47F5-9C59-871EBADA5828}"
+              DTS:DTSID="{B6EB9D2E-5A61-44FE-ACD8-83B17AB715E5}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -77,7 +77,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-9AB98SF.DWH Ventas]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{545B2E9A-D9C2-471D-B6B9-9B1980D1FFF5}"
+      DTS:DTSID="{49B02EA3-BF3B-4DFC-A9C7-A2DE886D99C1}"
       DTS:ObjectName="DESKTOP-9AB98SF.DWH Ventas">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::DWH_Ventas]</DTS:PropertyExpression>
@@ -85,7 +85,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-9AB98SF;Initial Catalog=DWH Ventas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimDivisa-{545B2E9A-D9C2-471D-B6B9-9B1980D1FFF5}DESKTOP-9AB98SF.DWH Ventas;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-9AB98SF;Initial Catalog=DWH Ventas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimDivisa-{49B02EA3-BF3B-4DFC-A9C7-A2DE886D99C1}DESKTOP-9AB98SF.DWH Ventas;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -95,7 +95,7 @@
       DTS:refId="Package\Cargar Datos a Dim Divisa"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{25A2BD53-3298-4B83-B5F3-B3CC77D7A034}"
+      DTS:DTSID="{4E034393-4FB4-418A-8987-603D42C42238}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Cargar Datos a Dim Divisa"
@@ -1400,7 +1400,7 @@ CROSS APPLY OPENJSON(divisas.value)
       DTS:refId="Package\Crear Tabla Dim Divisa"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{22B3FA46-73F8-48A5-9A85-63F728CCA595}"
+      DTS:DTSID="{F5EB0C7F-12E9-40A7-BD8C-AF059E3287EB}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Crear Tabla Dim Divisa"
@@ -1409,7 +1409,7 @@ CROSS APPLY OPENJSON(divisas.value)
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{545B2E9A-D9C2-471D-B6B9-9B1980D1FFF5}"
+          SQLTask:Connection="{49B02EA3-BF3B-4DFC-A9C7-A2DE886D99C1}"
           SQLTask:SqlStatementSource="IF NOT EXISTS(SELECT * FROM SYS.objects WHERE object_id = object_id('DimDivisa') AND TYPE IN ('U'))&#xA;CREATE TABLE DimDivisa&#xA;(&#xA;    IDDivisa INT,&#xA;    EtiquetaDivisa INT,&#xA;    NombreDivisa VARCHAR(5),&#xA;    DescripcionDivisa VARCHAR(25),&#xA;&#x9;Valor MONEY&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1417,7 +1417,7 @@ CROSS APPLY OPENJSON(divisas.value)
       DTS:refId="Package\Extrar Información API"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Tarea Ejecutar proceso"
-      DTS:DTSID="{88F1E767-3A0B-4016-A591-07690D8CB07C}"
+      DTS:DTSID="{3BB2952C-01DB-44BF-A65C-5FFE09EE9AF9}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
       DTS:ObjectName="Extrar Información API"
@@ -1435,7 +1435,7 @@ CROSS APPLY OPENJSON(divisas.value)
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{8C70EC37-4E82-4254-9369-0237C43A9D8A}"
+      DTS:DTSID="{45C7E644-34F5-4130-A735-B7420D1426FC}"
       DTS:From="Package\Crear Tabla Dim Divisa"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
@@ -1443,7 +1443,7 @@ CROSS APPLY OPENJSON(divisas.value)
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
       DTS:CreationName=""
-      DTS:DTSID="{1C0860A2-08FD-4812-8C78-1BC60D675A26}"
+      DTS:DTSID="{6809E602-9A12-47AD-A0C1-43E227576AF1}"
       DTS:From="Package\Extrar Información API"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 1"

@@ -1,25 +1,25 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/13/2024 1:04:52 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-E0TE9IN"
   DTS:CreatorName="DESKTOP-E0TE9IN\PC"
-  DTS:DTSID="{72207E0D-BB58-49E8-9C43-2F1BCA646C78}"
+  DTS:DTSID="{D7373C04-CFB5-400E-B9C5-6A8FE3767D1D}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="12298"
   DTS:ObjectName="DimPromocion"
   DTS:PackageType="5"
   DTS:VersionBuild="15"
-  DTS:VersionGUID="{FC43882E-91F8-4301-BA1C-DE57A90E0355}">
+  DTS:VersionGUID="{1B1FFC27-8EFF-4CD1-BC9F-D0FE9BC35F6A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{DF2765F7-374B-459C-A84D-9E5D605C18D5}"
+      DTS:DTSID="{76404871-258E-47F6-8BFF-817E8F455ACB}"
       DTS:ObjectName="Administrador de conexiones de archivos planos">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::DimPromocion]</DTS:PropertyExpression>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IDPromocion"
-              DTS:DTSID="{8E62CDCD-8638-4C15-AA60-BDC24B1A737E}"
+              DTS:DTSID="{68ADA0C1-F43C-4815-86B8-99CE9E40FEFE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EtiquetaPromocion"
-              DTS:DTSID="{F3B9AD1D-1ED9-4214-8F2E-C17A2AF3736E}"
+              DTS:DTSID="{D1F77F82-0A06-4C10-9C75-EB60554B7D7C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NombrePromocion"
-              DTS:DTSID="{10A7239E-AD9E-428F-8C4D-9AE40380306F}"
+              DTS:DTSID="{20DB4887-4178-43D0-A4B4-3EA240F3B90E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DescripcionPromocion"
-              DTS:DTSID="{647218FC-8E02-4496-94FA-C1EC01D80FA1}"
+              DTS:DTSID="{12D7B600-53FD-46BE-8970-54A954DA07A5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PorcentajeDescuento"
-              DTS:DTSID="{F658E921-BF31-4B4E-9E60-0D9F296EE5CD}"
+              DTS:DTSID="{95E89B8C-9DA5-4A95-B15E-C3839F07A327}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TipoPromocion"
-              DTS:DTSID="{090AA0E0-2921-4A5A-A5CE-C73498EA47DC}"
+              DTS:DTSID="{4B0C9A84-E433-40B1-85FA-56888A9043A4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CategoriaPromocion"
-              DTS:DTSID="{77C5E6CB-46B9-41BF-BA51-6FAD82C54767}"
+              DTS:DTSID="{D9ECF1CA-A57D-4CFF-BEF7-14C57B4CD417}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,7 +104,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FechaInicio"
-              DTS:DTSID="{BA192468-86E0-470A-B23F-808B76306727}"
+              DTS:DTSID="{843B5024-EDD7-4725-B954-CD4D717A8D8C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FechaFin"
-              DTS:DTSID="{BA524EF1-E5CB-4D01-B4E9-6A9F900D985F}"
+              DTS:DTSID="{36FDFEAA-26BE-4773-BFB3-2757D3EE5F4E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -122,7 +122,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-9AB98SF.DWH Ventas]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{2405A4EA-FC8C-4656-8725-F7B9D94CC591}"
+      DTS:DTSID="{CBF147EE-3B5A-4B3C-AA2F-0FB6316EC56E}"
       DTS:ObjectName="DESKTOP-9AB98SF.DWH Ventas">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::DWH_Ventas]</DTS:PropertyExpression>
@@ -140,7 +140,7 @@
       DTS:refId="Package\Cargar Datos a Dim Promoción"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{BC1E1186-8331-428D-97E9-1586573F6F28}"
+      DTS:DTSID="{0750B941-6D11-44B6-A73F-81735083C7EF}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Cargar Datos a Dim Promoción"
@@ -985,7 +985,7 @@ where [refTable].[IDPromocion] = ?</property>
       DTS:refId="Package\Crear Tabla Dim Promoción"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{16E88616-9286-495E-B06A-AE8C60DD89AD}"
+      DTS:DTSID="{03216A66-C392-46D0-A34F-B1ED7660E661}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Crear Tabla Dim Promoción"
@@ -994,7 +994,7 @@ where [refTable].[IDPromocion] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{2405A4EA-FC8C-4656-8725-F7B9D94CC591}"
+          SQLTask:Connection="{CBF147EE-3B5A-4B3C-AA2F-0FB6316EC56E}"
           SQLTask:SqlStatementSource="IF NOT EXISTS(SELECT * FROM SYS.objects WHERE object_id = object_id('DimPromocion') AND TYPE IN ('U'))&#xA;CREATE TABLE DimPromocion&#xA;(&#xA;    IDPromocion INT,&#xA;    NombrePromocion VARCHAR(50),&#xA;    PorcentajeDescuento FLOAT&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1003,7 +1003,7 @@ where [refTable].[IDPromocion] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{E73CB2FE-C458-4E07-AD1C-7D64B41B21FB}"
+      DTS:DTSID="{92C2F2E6-4CE8-4EED-8F7B-F21B557391FB}"
       DTS:From="Package\Crear Tabla Dim Promoción"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"

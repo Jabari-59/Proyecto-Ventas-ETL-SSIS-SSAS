@@ -1,25 +1,25 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/13/2024 1:04:52 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-E0TE9IN"
   DTS:CreatorName="DESKTOP-E0TE9IN\PC"
-  DTS:DTSID="{8EEB228F-287D-432C-B792-557E55BB8754}"
+  DTS:DTSID="{A5DDFF71-BFDA-49F6-9B37-1D24B6A727C6}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="12298"
   DTS:ObjectName="DimFecha"
   DTS:PackageType="5"
   DTS:VersionBuild="12"
-  DTS:VersionGUID="{CEC41EC4-8B0D-4A53-B0D0-3CD5DBB4FE48}">
+  DTS:VersionGUID="{F2385E8D-6365-4944-9330-6A4AEF5882DE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{0FD47804-C49C-4365-A742-7ECF1015F26F}"
+      DTS:DTSID="{B196933F-C8B6-4E59-B166-E424640AD67E}"
       DTS:ObjectName="Administrador de conexiones con Excel">
       <DTS:PropertyExpression
         DTS:Name="ExcelFilePath">@[$Project::DimFecha]</DTS:PropertyExpression>
@@ -33,7 +33,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-9AB98SF.DWH Ventas]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{6E74CCD0-6685-466C-B02D-59FA36905582}"
+      DTS:DTSID="{823C6994-128B-4B3A-ABD5-E531C0E5433C}"
       DTS:ObjectName="DESKTOP-9AB98SF.DWH Ventas">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::DWH_Ventas]</DTS:PropertyExpression>
@@ -51,7 +51,7 @@
       DTS:refId="Package\Cargar Datos a Dim Fecha"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{BBFAB9AC-03E0-44AB-BFDD-4B272656DC40}"
+      DTS:DTSID="{EB107312-A621-4DB2-BF17-FF5C84946144}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Cargar Datos a Dim Fecha"
@@ -822,7 +822,7 @@ where [refTable].[FechaID] = ?</property>
       DTS:refId="Package\Crear Tabla Dim Fecha"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{A2F0C546-9CB6-4AA9-A6D3-F4B60D0F08A2}"
+      DTS:DTSID="{EFFF55EA-D427-4CDF-9075-CAB0A76EEF99}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Crear Tabla Dim Fecha"
@@ -831,7 +831,7 @@ where [refTable].[FechaID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{6E74CCD0-6685-466C-B02D-59FA36905582}"
+          SQLTask:Connection="{823C6994-128B-4B3A-ABD5-E531C0E5433C}"
           SQLTask:SqlStatementSource="IF NOT EXISTS(SELECT * FROM SYS.objects WHERE object_id = object_id('DimFecha') AND TYPE IN ('U'))&#xA;CREATE TABLE DimFecha (&#xA;    FechaID DATE,&#xA;    Anio INT,&#xA;    Trimestre NVARCHAR(7),&#xA;    Semestre NVARCHAR(7),&#xA;    Mes NVARCHAR(7),&#xA;    Dia NVARCHAR(10),&#xA;    DiaSemana INT,&#xA;    NombreDia NVARCHAR(20),&#xA;    NumSemana INT&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -840,7 +840,7 @@ where [refTable].[FechaID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{16992237-3C2A-442C-841B-AE1AE63C444E}"
+      DTS:DTSID="{0DB5A3AD-1956-40E8-ACCA-A98C5B64916D}"
       DTS:From="Package\Crear Tabla Dim Fecha"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"

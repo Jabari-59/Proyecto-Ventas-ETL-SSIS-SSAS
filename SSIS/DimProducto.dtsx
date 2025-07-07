@@ -1,25 +1,25 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/13/2024 1:04:52 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-E0TE9IN"
   DTS:CreatorName="DESKTOP-E0TE9IN\PC"
-  DTS:DTSID="{A1457AAD-9948-47B1-A3C9-941AE264468B}"
+  DTS:DTSID="{85A8C7B4-14CD-4120-B989-D660FC977281}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="12298"
   DTS:ObjectName="DimProducto"
   DTS:PackageType="5"
   DTS:VersionBuild="26"
-  DTS:VersionGUID="{4D51276F-4AD2-48C8-8C02-4C22A5257F1C}">
+  DTS:VersionGUID="{963BA31C-DD58-40FD-9553-65B49FA3C793}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-9AB98SF.DWH Ventas]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{EB72564C-695D-4D23-87C3-D443C6E0F9BA}"
+      DTS:DTSID="{AA5E70E1-C5E2-4EFF-8FE9-9B5E93DEFC0B}"
       DTS:ObjectName="DESKTOP-9AB98SF.DWH Ventas">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::DWH_Ventas]</DTS:PropertyExpression>
@@ -37,7 +37,7 @@
       DTS:refId="Package\Cargar Datos a Dim Producto"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{3E99EE0F-6F2E-4230-BBBE-1E922CDBF567}"
+      DTS:DTSID="{2B649F2A-7915-4EAD-9545-E1C195C91043}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Cargar Datos a Dim Producto"
@@ -773,7 +773,7 @@ ON DPS.ProductCategoryKey = DPC.ProductCategoryKey</property>
       DTS:refId="Package\Crear Tabla Dim Producto"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{42D251D7-4F6B-4280-9AFD-07853B9134D3}"
+      DTS:DTSID="{36FD0CF2-3AA3-4C13-BB90-CA1B4F82E0B6}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Crear Tabla Dim Producto"
@@ -782,7 +782,7 @@ ON DPS.ProductCategoryKey = DPC.ProductCategoryKey</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EB72564C-695D-4D23-87C3-D443C6E0F9BA}"
+          SQLTask:Connection="{AA5E70E1-C5E2-4EFF-8FE9-9B5E93DEFC0B}"
           SQLTask:SqlStatementSource="IF NOT EXISTS(SELECT * FROM sys.objects WHERE object_id=object_id('DimProducto')AND TYPE IN ('U'))&#xA;CREATE TABLE DimProducto&#xA;(&#xA;&#x9;IDProducto INT,&#xA;&#x9;NombreProducto NVARCHAR(500),&#xA;&#x9;SubCategoria NVARCHAR(50),&#xA;&#x9;Categoria NVARCHAR(50),&#xA;&#x9;Marca NVARCHAR(50),&#xA;&#x9;Color NVARCHAR(20),&#xA;&#x9;CostoUnitario MONEY,&#xA;&#x9;PrecioUnitario MONEY&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -791,7 +791,7 @@ ON DPS.ProductCategoryKey = DPC.ProductCategoryKey</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{653D299B-CA6E-4D1D-90EE-FDBE1B7487C2}"
+      DTS:DTSID="{9FA4D20C-4460-48E8-BF0B-BC471949BAAA}"
       DTS:From="Package\Crear Tabla Dim Producto"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
