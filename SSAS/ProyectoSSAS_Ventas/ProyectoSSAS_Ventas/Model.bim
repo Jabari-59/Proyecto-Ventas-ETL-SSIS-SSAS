@@ -1,0 +1,448 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1500,
+  "model": {
+    "name": "Modelo",
+    "culture": "es-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/DESKTOP-9AB98SF;DWH Ventas",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "DESKTOP-9AB98SF",
+            "database": "DWH Ventas"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "kind": "SQL",
+          "path": "desktop-9ab98sf;DWH Ventas",
+          "Username": "sa",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimFecha",
+        "columns": [
+          {
+            "name": "FechaID",
+            "dataType": "dateTime",
+            "sourceColumn": "FechaID"
+          },
+          {
+            "name": "Anio",
+            "dataType": "int64",
+            "sourceColumn": "Anio"
+          },
+          {
+            "name": "Trimestre",
+            "dataType": "string",
+            "sourceColumn": "Trimestre"
+          },
+          {
+            "name": "Semestre",
+            "dataType": "string",
+            "sourceColumn": "Semestre"
+          },
+          {
+            "name": "Mes",
+            "dataType": "string",
+            "sourceColumn": "Mes"
+          },
+          {
+            "name": "Dia",
+            "dataType": "string",
+            "sourceColumn": "Dia"
+          },
+          {
+            "name": "DiaSemana",
+            "dataType": "int64",
+            "sourceColumn": "DiaSemana"
+          },
+          {
+            "name": "NombreDia",
+            "dataType": "string",
+            "sourceColumn": "NombreDia"
+          },
+          {
+            "name": "NumSemana",
+            "dataType": "int64",
+            "sourceColumn": "NumSemana"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-9AB98SF;DWH Ventas\",",
+                "    dbo_DimFecha = Source{[Schema=\"dbo\",Item=\"DimFecha\"]}[Data]",
+                "in",
+                "    dbo_DimFecha"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimProducto",
+        "columns": [
+          {
+            "name": "IDProducto",
+            "dataType": "int64",
+            "sourceColumn": "IDProducto"
+          },
+          {
+            "name": "NombreProducto",
+            "dataType": "string",
+            "sourceColumn": "NombreProducto"
+          },
+          {
+            "name": "SubCategoria",
+            "dataType": "string",
+            "sourceColumn": "SubCategoria"
+          },
+          {
+            "name": "Categoria",
+            "dataType": "string",
+            "sourceColumn": "Categoria"
+          },
+          {
+            "name": "Marca",
+            "dataType": "string",
+            "sourceColumn": "Marca"
+          },
+          {
+            "name": "Color",
+            "dataType": "string",
+            "sourceColumn": "Color"
+          },
+          {
+            "name": "CostoUnitario",
+            "dataType": "decimal",
+            "sourceColumn": "CostoUnitario"
+          },
+          {
+            "name": "PrecioUnitario",
+            "dataType": "decimal",
+            "sourceColumn": "PrecioUnitario"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-9AB98SF;DWH Ventas\",",
+                "    dbo_DimProducto = Source{[Schema=\"dbo\",Item=\"DimProducto\"]}[Data]",
+                "in",
+                "    dbo_DimProducto"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimPromocion",
+        "columns": [
+          {
+            "name": "IDPromocion",
+            "dataType": "int64",
+            "sourceColumn": "IDPromocion"
+          },
+          {
+            "name": "NombrePromocion",
+            "dataType": "string",
+            "sourceColumn": "NombrePromocion"
+          },
+          {
+            "name": "PorcentajeDescuento",
+            "dataType": "double",
+            "sourceColumn": "PorcentajeDescuento"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-9AB98SF;DWH Ventas\",",
+                "    dbo_DimPromocion = Source{[Schema=\"dbo\",Item=\"DimPromocion\"]}[Data]",
+                "in",
+                "    dbo_DimPromocion"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimTienda",
+        "columns": [
+          {
+            "name": "IDTienda",
+            "dataType": "int64",
+            "sourceColumn": "IDTienda"
+          },
+          {
+            "name": "TipoTienda",
+            "dataType": "string",
+            "sourceColumn": "TipoTienda"
+          },
+          {
+            "name": "NombreTienda",
+            "dataType": "string",
+            "sourceColumn": "NombreTienda"
+          },
+          {
+            "name": "Estado",
+            "dataType": "string",
+            "sourceColumn": "Estado"
+          },
+          {
+            "name": "CantidadEmpleados",
+            "dataType": "int64",
+            "sourceColumn": "CantidadEmpleados"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-9AB98SF;DWH Ventas\",",
+                "    dbo_DimTienda = Source{[Schema=\"dbo\",Item=\"DimTienda\"]}[Data]",
+                "in",
+                "    dbo_DimTienda"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimDivisa",
+        "columns": [
+          {
+            "name": "IDDivisa",
+            "dataType": "int64",
+            "sourceColumn": "IDDivisa"
+          },
+          {
+            "name": "EtiquetaDivisa",
+            "dataType": "int64",
+            "sourceColumn": "EtiquetaDivisa"
+          },
+          {
+            "name": "NombreDivisa",
+            "dataType": "string",
+            "sourceColumn": "NombreDivisa"
+          },
+          {
+            "name": "DescripcionDivisa",
+            "dataType": "string",
+            "sourceColumn": "DescripcionDivisa"
+          },
+          {
+            "name": "Valor",
+            "dataType": "decimal",
+            "sourceColumn": "Valor"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-9AB98SF;DWH Ventas\",",
+                "    dbo_DimDivisa = Source{[Schema=\"dbo\",Item=\"DimDivisa\"]}[Data]",
+                "in",
+                "    dbo_DimDivisa"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "THVentas",
+        "columns": [
+          {
+            "name": "IDVenta",
+            "dataType": "int64",
+            "sourceColumn": "IDVenta"
+          },
+          {
+            "name": "IDFecha",
+            "dataType": "dateTime",
+            "sourceColumn": "IDFecha"
+          },
+          {
+            "name": "IDCanal",
+            "dataType": "int64",
+            "sourceColumn": "IDCanal"
+          },
+          {
+            "name": "IdTienda",
+            "dataType": "int64",
+            "sourceColumn": "IdTienda"
+          },
+          {
+            "name": "IDProducto",
+            "dataType": "int64",
+            "sourceColumn": "IDProducto"
+          },
+          {
+            "name": "IDPromocion",
+            "dataType": "int64",
+            "sourceColumn": "IDPromocion"
+          },
+          {
+            "name": "IDDivisa",
+            "dataType": "int64",
+            "sourceColumn": "IDDivisa"
+          },
+          {
+            "name": "PrecioUnitario",
+            "dataType": "decimal",
+            "sourceColumn": "PrecioUnitario"
+          },
+          {
+            "name": "CantidadVenta",
+            "dataType": "int64",
+            "sourceColumn": "CantidadVenta"
+          },
+          {
+            "name": "CostoTotal",
+            "dataType": "decimal",
+            "sourceColumn": "CostoTotal"
+          },
+          {
+            "name": "MontoTotal",
+            "dataType": "decimal",
+            "sourceColumn": "MontoTotal"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-9AB98SF;DWH Ventas\",",
+                "    dbo_THVentas = Source{[Schema=\"dbo\",Item=\"THVentas\"]}[Data]",
+                "in",
+                "    dbo_THVentas"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Ventas",
+            "expression": "SUM(THVentas[MontoTotal])",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\"><Currency LCID=\"21514\" DisplayName=\"$ Español (Estados Unidos)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Costo",
+            "expression": "SUM(THVentas[CostoTotal])",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\"><Currency LCID=\"21514\" DisplayName=\"$ Español (Estados Unidos)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Utilidad",
+            "expression": "[Ventas] - [Costo]",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\"><Currency LCID=\"21514\" DisplayName=\"$ Español (Estados Unidos)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Margen",
+            "expression": "DIVIDE([Utilidad],[Ventas])",
+            "formatString": "0.00%;-0.00%;0.00%"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "6a74f308-f42e-44e2-a728-f32fc7166f87",
+        "fromTable": "THVentas",
+        "fromColumn": "IDDivisa",
+        "toTable": "DimDivisa",
+        "toColumn": "IDDivisa"
+      },
+      {
+        "name": "27218dbf-827e-465c-89ea-cef24866f552",
+        "toCardinality": "many",
+        "fromTable": "THVentas",
+        "fromColumn": "IDFecha",
+        "toTable": "DimFecha",
+        "toColumn": "FechaID"
+      },
+      {
+        "name": "a6e1c323-0cc1-47a5-966d-13a3076aad6b",
+        "fromTable": "THVentas",
+        "fromColumn": "IDPromocion",
+        "toTable": "DimPromocion",
+        "toColumn": "IDPromocion"
+      },
+      {
+        "name": "20d277b8-0eaf-4e20-a325-2da1e66e0227",
+        "fromTable": "THVentas",
+        "fromColumn": "IDProducto",
+        "toTable": "DimProducto",
+        "toColumn": "IDProducto"
+      },
+      {
+        "name": "797cd61f-8668-46f8-8248-2ff219441489",
+        "fromTable": "THVentas",
+        "fromColumn": "IdTienda",
+        "toTable": "DimTienda",
+        "toColumn": "IDTienda"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "600"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
